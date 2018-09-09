@@ -34,7 +34,11 @@ app.get('/api/v1/users/:id', userController.getUserById);
 app.put('/api/v1/users/:id', userController.updateUserById);
 app.delete('/api/v1/users/:id', userController.deleteUserById);
 
-app.post('api/v1/products', productController.postNewProduct);
+app.post('/api/v1/products', productController.postNewProduct);
+app.get('/api/v1/products', productController.getAllProducts);
+app.get('/api/v1/products/:id', productController.getProductById);
+app.put('/api/v1/products/:id', productController.updateProductById);
+app.delete('/api/v1/products/:id', productController.deleteProductById);
 
 
 module.exports = app;
