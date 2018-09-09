@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
  */
  const userController = require('./controllers/users');
  const productController = require('./controllers/products');
+ const reviewController = require('./controllers/review');
 
 var app = express();
 
@@ -39,6 +40,12 @@ app.get('/api/v1/products', productController.getAllProducts);
 app.get('/api/v1/products/:id', productController.getProductById);
 app.put('/api/v1/products/:id', productController.updateProductById);
 app.delete('/api/v1/products/:id', productController.deleteProductById);
+
+app.post('/api/v1/reviews', reviewController.postNewReview);
+app.get('/api/v1/reviews', reviewController.getAllReviews);
+app.get('/api/v1/reviews/:id', reviewController.getReviewById);
+app.put('/api/v1/reviews/:id', reviewController.updateReviewById);
+app.delete('/api/v1/reviews/:id', reviewController.deleteReviewById);
 
 
 module.exports = app;
